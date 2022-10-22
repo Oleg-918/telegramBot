@@ -6,4 +6,5 @@ import usatu.bot.telegrambot.model.Lab;
 
 @Repository
 public interface LabRepository extends JpaRepository<Lab, Integer> {
+    Lab findByNumber(Integer number);
 }
