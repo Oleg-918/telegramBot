@@ -15,7 +15,7 @@ import usatu.bot.telegrambot.controller.TelegramBot;
 public class BotInitializer {
 
     @Autowired
-    TelegramBot bot;
+    private TelegramBot bot;
 
     @EventListener({ContextRefreshedEvent.class})
     public void init() throws TelegramApiException {
