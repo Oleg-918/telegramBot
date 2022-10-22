@@ -9,7 +9,7 @@ import org.telegram.telegrambots.meta.api.objects.Document;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "labs")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

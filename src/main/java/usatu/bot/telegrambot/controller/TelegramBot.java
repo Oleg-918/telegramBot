@@ -10,6 +10,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMar
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import usatu.bot.telegrambot.config.BotConfig;
+import usatu.bot.telegrambot.sevice.LabService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +22,8 @@ public class TelegramBot extends TelegramLongPollingBot {
 
 
     private BotConfig config;
+
+    private LabService labService;
 
     private final String INFO = "Привет! Этот бот предназначен для обмена лабораторными работами по физике. " +
             "Чтобы добавить л.р. нажми на \"Прикрепить,\" введи номер лабораторной и прикрепи соответсвующий файл." +
@@ -48,15 +51,19 @@ public class TelegramBot extends TelegramLongPollingBot {
                     break;
 
                 case "Поиск", "/get":
-                    sendMessage(chatId, INFO);
+                    sendMessage(chatId, "Введите номер Лабораторной");
+//                    Вот тут возникает трабл, тк непонятно как считать значение из сообщения, была пропиисана неверная логика, дуюлировать не стал
                     break;
 
                 case "Прикрепить", "/add":
+                    sendMessage(chatId, "Введите номер Лабораторной");
+//                    Вот тут возникает трабл, тк непонятно как считать значение из сообщения, была пропиисана неверная логика, дуюлировать не стал
+                    sendMessage(chatId, "Прикрепите PDF-файл");
 
                     break;
 
                 case "/info", "Информация":
-
+                    sendMessage(chatId, INFO);
                     break;
 
                 default:
